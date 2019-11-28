@@ -40,3 +40,11 @@ sudo su - -c "R -e \"devtools::install_github('kdkorthauer/scDD')\""
 wget https://download2.rstudio.org/rstudio-server-0.99.903-amd64.deb
 
 sudo gdebi rstudio-server-0.99.903-amd64.deb
+
+# Setting up local R environment to connect to Github
+
+touch $HOME/.Renviron
+
+echo 'GITHUB_PAT=1dbd984bbfd5436b3021a6a5d0ed0fb4d2a6c7c9' >> ~/.Renviron
+
+sudo rstudio-server restart
