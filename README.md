@@ -21,3 +21,10 @@ You should see your PAT print to screen.
 Now commands you run from the devtools package, which consults GITHUB_PAT by default, will be able to access private GitHub repositories to which you have access, and you can install them with ```devtools::install_github('username/reponame')```.  With this set up, you will now be able to run the server install scripts.
 
 
+## Loading the environment
+
+Step 1 - Run the RStudio server install script
+
+Step 2 - Run ```Rscript set_env.R``` to load the packages and libraries necessary for the modeling environment
+
+
