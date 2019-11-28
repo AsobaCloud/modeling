@@ -17,3 +17,7 @@ libraries(lib)
 #install asobahousing package
 install_github("asobalife/ona")
 
+#initialize sdk's
+source(file="~/ona_environment/sdk/Looker/initializeLooker.R")
+source(file="~/ona_environment/sdk/Snowflake/initializeSnowflake.R")
+
