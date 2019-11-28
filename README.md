@@ -27,7 +27,7 @@ Now commands you run from the devtools package, which consults GITHUB_PAT by def
 
 Step 1 - Run the RStudio server install script
 
-Step 2 - Run ```Rscript set_env.R``` to load the packages, sdk's, and libraries necessary for the modeling environment
+Step 2 - Run ```Rscript LoadModelingEnv.R``` to load the packages, sdk's, and libraries necessary for the modeling environment
 
 Step 3 - Test to make sure the sdk's are working correctly by downloading a dummy dataset and testing a push to a new Snowflake table
 
