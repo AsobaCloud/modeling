@@ -3,6 +3,8 @@ Portable R environment for running the Ona asobahousing models.  Includes bash s
 
 ## Accessing the repo
 
+Repo access is built into the setup script.  However, it setup of the .Renviron file is unsuccessful, you can follow the below vignette to install manually:
+
 You can access ```.Renviron``` via your R console or within the RStudio IDE:
 ```usethis::edit_r_environ()```
 
