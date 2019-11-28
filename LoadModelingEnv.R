@@ -15,5 +15,5 @@ packages(lib, prompt = FALSE)
 libraries(lib)
 
 #install asobahousing package
-install_github("asobalife/ona",subdir="/r/pkg")
+install_github("asobalife/ona",subdir="/r/pkg", force = TRUE)
 
