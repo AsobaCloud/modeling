@@ -11,13 +11,12 @@ library(devtools)
 
 #install CRAN packages
 lib<-c("devtools","magrittr","caret","gbm","glmnet","randomForest","kernlab","doParallel","asobalife/lookr")
-packages(lib, prompt = FALSE)
 libraries(lib)
 
 #install asobahousing package
 install_github("asobalife/ona")
 
 #initialize sdk's
-source(file="~/ona_environment/sdk/Looker/initializeLooker.R")
-source(file="~/ona_environment/sdk/Snowflake/initializeSnowflake.R")
+source(file="~/Public/ona_environment/sdk/Looker/initializeLooker.R")
+source(file="~/Public/ona_environment/sdk/Snowflake/initializeSnowflake.R")
 

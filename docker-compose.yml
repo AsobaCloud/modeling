@@ -1,0 +1,9 @@
+version: '2.4'
+services:
+  rstudio:
+    environment:
+      - USER=rstudio
+      - PASSWORD=vbseut
+    image: "rocker/r-ver:3.6.2"
+    ports:
+     - 8787:8787
