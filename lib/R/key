@@ -1,0 +1,11 @@
+options(
+  usethis.description = list(
+    `Authors@R` = 'person("Shingai", "Samudzi", email = "shingai@asoba.co", role = c("aut", "cre"),
+      comment = c(ORCID = "0000-0003-0826-1515"))',
+    License = "MIT + file LICENSE",
+    Language =  "es"
+  )
+)
+
+Personal access token (github)
+1dbd984bbfd5436b3021a6a5d0ed0fb4d2a6c7c9

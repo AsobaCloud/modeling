@@ -97,10 +97,10 @@ COPY disable_auth_rserver.conf /etc/rstudio/disable_auth_rserver.conf
 COPY pam-helper.sh /usr/lib/rstudio-server/bin/pam-helper
 
 ## add the Asoba script library
-COPY ./scripts /home/rstudio/scripts
+COPY ./lib /home/rstudio/lib
 
-## Add Personal Access Token for github commits
-RUN Rscript /home/rstudio/scripts/loadModelingEnv.R
+## Load all necessary starter R packages
+RUN Rscript /home/rstudio/lib/loadModelingEnv.R
 
 EXPOSE 8787
 
