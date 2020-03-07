@@ -28,6 +28,7 @@ RUN apt-get update \
     psmisc \
     procps \
     python-setuptools \
+    xclip \
     zlib1g-dev \
     sudo \
     wget \
@@ -97,10 +98,10 @@ COPY disable_auth_rserver.conf /etc/rstudio/disable_auth_rserver.conf
 COPY pam-helper.sh /usr/lib/rstudio-server/bin/pam-helper
 
 ## add the Asoba script library
-COPY ./lib /home/rstudio/lib
+COPY ./scripts /home/rstudio/scripts
 
-## Load all necessary starter R packages
-RUN Rscript /home/rstudio/lib/loadModelingEnv.R
+## Add Personal Access Token for github commits
+RUN Rscript /home/rstudio/scripts/loadModelingEnv.R
 
 EXPOSE 8787
 
