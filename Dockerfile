@@ -13,14 +13,18 @@ ENV PANDOC_TEMPLATES_VERSION=${PANDOC_TEMPLATES_VERSION:-2.9}
 ## Attempts to get detect latest version, otherwise falls back to version given in $VER
 ## Symlink pandoc, pandoc-citeproc so they are available system-wide
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends \
+  && apt-get install -qy --no-install-recommends \
+    default-jdk \
+    default-jre \
     file \
     git \
     libapparmor1 \
     libclang-dev \
     libcurl4-openssl-dev \
     libedit2 \
+    libgdal-dev \
     libgit2-dev \
+    libproj-dev \
     libssl-dev \
     libxml2-dev \
     lsb-release \
@@ -28,9 +32,11 @@ RUN apt-get update \
     psmisc \
     procps \
     python-setuptools \
+    r-cran-rjava \
     xclip \
     zlib1g-dev \
     sudo \
+    x11-apps \
     wget \
   && if [ -z "$RSTUDIO_VERSION" ]; \
     then RSTUDIO_URL="https://www.rstudio.org/download/latest/stable/server/bionic/rstudio-server-latest-amd64.deb"; \
@@ -88,7 +94,8 @@ RUN apt-get update \
           \nloadRData="0" \
           \nsaveAction="0"' \
           > /home/rstudio/.rstudio/monitored/user-settings/user-settings \
-  && chown -R rstudio:rstudio /home/rstudio/.rstudio
+  && chown -R rstudio:rstudio /home/rstudio/.rstudio \
+  && R CMD javareconf
 
 COPY userconf.sh /etc/cont-init.d/userconf
 

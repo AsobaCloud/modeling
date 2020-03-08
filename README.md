@@ -1,9 +1,13 @@
-# Readme 
+# Readme
 
 ## purpose
 
 This is a containerized environment for the basic ingest, preprocessing, and storage of datasets used
-for economic modeling purposes.
+for economic and complexity modeling purposes.  The family of functions and packages within this environment support projects focused on modeling macroeconomic trends as well as agent-based modeling/microeconomic simulations
+
+## Contents
+
+There are several folders with home-cooked and modified scripts for data cleansing related tasks using Python, Shell, R and SQL scripts.  Modeling cookbooks, guides, and ABMs build for Netlogo are also provided in the docs folder.
 
 ## transformation and storage
 
