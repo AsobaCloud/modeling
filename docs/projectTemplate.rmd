@@ -2,6 +2,17 @@
 
 ## 1. Prepare Problem
 ### a) Load libraries
+
+Load all of the libraries that are pre-installed in this environment, and whatever other libraries you use for the project.
+
+```{r}
+library(easypackages)
+library(devtools)
+
+lib<-c("devtools","INWT/INWTUtils","magrittr","caret","gbm","glmnet","randomForest","kernlab","doParallel","tidyverse","knitr","asobalife/lookr","rJava","dplyr","snowflakedb/dplyr-snowflakedb","zeallot","glue","httr","jsonlite","bigrquery","rich1000/lookr")
+libraries(lib)
+
+```
 ### b) Load dataset
 ### c) Split-out validation dataset
 

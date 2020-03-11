@@ -1,0 +1,84 @@
+---
+title: "Getting Started"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Getting Started
+
+Congrats!  If you can see this, you have successfully installed the Ona R Studio environment.
+
+Before you get started, there are a few final pieces you should take to complete the setup.
+
+## Setup a project environment for development
+
+Adding your Personal Access Token to Renviron will allow you to access your private repos on Github and build git workflows from directly within R Studio
+
+```{sh}
+echo 'GITHUB_PAT=1dbd984bbfd5436b3021a6a5d0ed0fb4d2a6c7c9' >> ~/.Renviron
+echo 'GITHUB_USERNAME=asobalife' >> ~/.Renviron
+```
+
+Next, we want to build out the proper folder structure for your R project.  Using the ```INWTUtils``` package, we can quickly set up a structure that is appropriate for the type of analysis or project you want to do.  To start, run the starters "start here" function
+
+```{r}
+library(INWTUtils)
+
+#Create R Project, where 'projectName' = your project name
+createProjectSkeleton(dir = "~/projectName",pkgName = "projectName" )
+
+setwd("~/projectName")
+
+
+```
+
+The project folder and files will be created, along with an .Rprofile file.  You may want to open the .Rprofile file inside of your 'projectName' folder to make any desired additions (such as ORCID info).  Be sure to restart your R session after making any changes.
+
+```{sh}
+options(
+  usethis.description = list(
+    `Authors@R` = 'person("Shingai", "Samudzi", email = "shingai@asoba.co", role = c("aut", "cre"),
+      comment = c(ORCID = "0000-0003-0826-1515"))',
+    License = "MIT + file LICENSE",
+    Language =  "es"
+  )
+)
+
+
+```
+
+Add your username, then run the start_here function again.  It may also prompt you to set the Rprofile because description defaults are not set.  If so, open Rprofile and set
+
+```{r}
+usethis::edit_r_profile()
+
+### Add to Rprofile
+options(
+    usethis.description = list(
+      `Authors@R` = 'person("Jane", "Doe", email = "jane@example.com", role = c("aut", "cre"),
+      comment = c(ORCID = "YOUR-ORCID-ID"))',
+      License = "MIT + file LICENSE",
+      Language =  "es"
+  )
+  )
+
+## Restart R once completed
+```
+
+You should now be good to go.  One more optional step is to hop over into the terminal and copy the R markdown notebook template for documenting data science projects into your new project folder.
+
+```{sh}
+
+cd ~/
+cp /docs/projectTemplate.rmd /projectName/reports/projectTemplate.rmd
+
+```
+
+You can use this Rmd template to help structure any experiments, projects, or models that you build.
+
+## Grab Your Data
+
+You have access to both Looker API as well as BigQuery to grab data for transformation.  You can see more info about the setup and API authorization needed to call data in the ~/scripts/R folder.  Once you grab your data, you are good to go.
+
+Happy modeling!

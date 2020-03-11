@@ -106,6 +106,7 @@ COPY pam-helper.sh /usr/lib/rstudio-server/bin/pam-helper
 
 ## add the Asoba script library
 COPY ./scripts /home/rstudio/scripts
+COPY ./docs /home/rstudio/docs
 
 ## Add Personal Access Token for github commits
 RUN Rscript /home/rstudio/scripts/loadModelingEnv.R
