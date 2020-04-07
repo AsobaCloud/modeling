@@ -16,7 +16,7 @@ Before you get started, there are a few final pieces you should take to complete
 Adding your Personal Access Token to Renviron will allow you to access your private repos on Github and build git workflows from directly within R Studio
 
 ```{sh}
-echo 'GITHUB_PAT=1dbd984bbfd5436b3021a6a5d0ed0fb4d2a6c7c9' >> ~/.Renviron
+echo 'GITHUB_PAT=ac89b97c221d3572d19f42606e84a97a65e7445f' >> ~/.Renviron
 echo 'GITHUB_USERNAME=asobalife' >> ~/.Renviron
 ```
 
