@@ -5,7 +5,8 @@ output:
     df_print: paged
 ---
 
-# Getting Started
+
+
 
 Congrats!  If you can see this, you have successfully installed the Ona R Studio environment.
 
@@ -26,9 +27,9 @@ Next, we want to build out the proper folder structure for your R project.  Usin
 library(INWTUtils)
 
 #Create R Project, where 'projectName' = your project name
-createProjectSkeleton(dir = "~/projectName",pkgName = "projectName" )
+createProjectSkeleton(dir = "~/modelSurface",pkgName = "ona", rProject = TRUE )
 
-setwd("~/projectName")
+setwd("~/modelSurface")
 
 
 ```
@@ -38,33 +39,12 @@ The project folder and files will be created, along with an .Rprofile file.  You
 ```{sh}
 options(
   usethis.description = list(
-    `Authors@R` = 'person("Shingai", "Samudzi", email = "shingai@asoba.co", role = c("aut", "cre"),
+    `Authors@R` = 'person("Shingai", "Samudzi", email = "shingai@asoba.co", role = c("aut","cre"),
       comment = c(ORCID = "0000-0003-0826-1515"))',
     License = "MIT + file LICENSE",
-    Language =  "es"
-  )
-)
-
-
+    Language =  "es"))
 ```
 
-Add your username, then run the start_here function again.  It may also prompt you to set the Rprofile because description defaults are not set.  If so, open Rprofile and set
-
-```{r}
-usethis::edit_r_profile()
-
-### Add to Rprofile
-options(
-    usethis.description = list(
-      `Authors@R` = 'person("Jane", "Doe", email = "jane@example.com", role = c("aut", "cre"),
-      comment = c(ORCID = "YOUR-ORCID-ID"))',
-      License = "MIT + file LICENSE",
-      Language =  "es"
-  )
-  )
-
-## Restart R once completed
-```
 
 You should now be good to go.  One more optional step is to hop over into the terminal and copy the R markdown notebook template for documenting data science projects into your new project folder.
 

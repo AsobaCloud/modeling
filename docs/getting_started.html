@@ -1638,50 +1638,39 @@ summary {
 
 
 <div id="getting-started" class="section level1">
-<h1>Getting Started</h1>
+
 <p>Congrats! If you can see this, you have successfully installed the Ona R Studio environment.</p>
 <p>Before you get started, there are a few final pieces you should take to complete the setup.</p>
 <div id="setup-a-project-environment-for-development" class="section level2">
 <h2>Setup a project environment for development</h2>
 <p>Adding your Personal Access Token to Renviron will allow you to access your private repos on Github and build git workflows from directly within R Studio</p>
-<pre class="sh"><code>echo 'GITHUB_PAT=1dbd984bbfd5436b3021a6a5d0ed0fb4d2a6c7c9' &gt;&gt; ~/.Renviron
-</code></pre>
-<p>Next, we want to build out the proper folder structure for your R project. Using <code>lockdata</code> starters package, we can quickly set up a structure that is appropriate for the type of analysis or project you want to do. To start, run the starters “start here” function</p>
-<pre class="r"><code>library(starters)
-starters::start_here()</code></pre>
-<pre><code>## Checking GitHub account can be guessed...
-## ✔ Your GitHub username is asobalife.
-## Checking git is installed...
-## ✔ git seems to be installed!
-## Checking gitconfig...
-## ✔ gitconfig is already set!
-## Checking GITHUB_PAT...
-## ✔ GITHUB_PAT is already set!
-## Checking default description values...
-## ✔ DESCRIPTION defaults are already set!
-## Checking build tools are available...
-## ✔ Build tools are available!
-## ✔ All set now!</code></pre>
-<p>You may be prompted to add your Github username to your Renviron file via the edit_r_environ function</p>
-<pre class="r"><code>usethis::edit_r_environ()</code></pre>
-<pre><code>## ● Edit '/home/ruser/.Renviron'
-## ● Restart R for changes to take effect</code></pre>
-<p>Add your username, then run the start_here function again. It may also prompt you to set the Rprofile because description defaults are not set. If so, open Rprofile and set</p>
-<pre class="r"><code>usethis::edit_r_profile()</code></pre>
-<pre><code>## ● Edit '/home/ruser/.Rprofile'
-## ● Restart R for changes to take effect</code></pre>
-<pre class="r"><code>### Add to Rprofile
-options(
-    usethis.description = list(
-      `Authors@R` = 'person(&quot;Jane&quot;, &quot;Doe&quot;, email = &quot;jane@example.com&quot;, role = c(&quot;aut&quot;, &quot;cre&quot;),
-      comment = c(ORCID = &quot;YOUR-ORCID-ID&quot;))',
-      License = &quot;MIT + file LICENSE&quot;,
-      Language =  &quot;es&quot;
-  )
-  )
+<pre class="sh"><code>echo 'GITHUB_PAT=ac89b97c221d3572d19f42606e84a97a65e7445f' &gt;&gt; ~/.Renviron
 
-## Restart R once completed</code></pre>
-<p>If you rerun the start_here function, you should be good to go. You can then review the options in starters:: to determine what kind of project you want to set up.</p>
+echo 'GITHUB_USERNAME=asobalife' >> ~/.Renviron
+</code></pre>
+<p>Next, we want to build out the proper folder structure for your R project. Using <code>INWTUtils</code> package, we can quickly set up a structure that is appropriate for the type of analysis or project you want to do.</p>
+<pre class="r"><code>library(INWTUtils)
+#Create R Project, where 'projectName' = your project name
+createProjectSkeleton(dir = "~/projectName",pkgName = "projectName" )
+
+setwd("~/projectName")  </code></pre>
+
+<p>The project folder and files will be created, along with an .Rprofile file.  You may want to open the .Rprofile file inside of your 'projectName' folder to make any desired additions (such as ORCID info).  Be sure to restart your R session after making any changes.</p>
+
+<pre class="sh"><code>options(
+  usethis.description = list(
+    `Authors@R` = 'person("Shingai", "Samudzi", email = "shingai@asoba.co", role = c("aut","cre"),
+      comment = c(ORCID = "0000-0003-0826-1515"))',
+    License = "MIT + file LICENSE",
+    Language =  "es"))</code></pre>
+
+<p>You should now be good to go.  One more optional step is to hop over into the terminal and copy the R markdown notebook template for documenting data science projects into your new project folder.</p>
+
+<pre class="sh"><code>cd ~/
+cp /docs/projectTemplate.rmd /projectName/reports/projectTemplate.rmd</code></pre>
+
+<p>You can use this Rmd template to help structure any experiments, projects, or models that you build.</p>
+
 </div>
 <div id="grab-your-data" class="section level2">
 <h2>Grab Your Data</h2>
